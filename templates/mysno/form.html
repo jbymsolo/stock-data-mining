@@ -1,0 +1,48 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Weibo Data Mining{% if query %} Results{% endif %}</title>
+    <link rel="shortcut icon" href="/media/20.ico" type="image/x-icon" />
+</head>
+<body>
+  <h1>远方
+    <form action="/west/jieguo/" method="post">
+    {% csrf_token %}
+    <input type="text" name="soso" style="height:30px;font-size:20px" size="43" >
+    <input type="button" value="内容搜索" style="width:100px;height:30px ; font-size:16px" >
+    <input type="submit" value="昵称搜索" style="width:100px;height:30px; font-size:16px">
+  </form> 
+    </h1>
+
+{% for item in names%}
+
+<p>
+    <table>
+    <tr>
+        <td width="100px" style="vertical-align: top;text-align:right "><b>  {{item.uname}} </b></td> 
+        <td width="10px" style="vertical-align: top;"><b>:</b></td>
+    
+        <td width="1100px">{{item.neirong}}</td>
+       
+        
+    <tr>
+     <hr style="height: 1px; border:none;border-top:1px dashed #CCCCCC; " />
+    </talbe>
+</p>
+
+{% endfor %}
+
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+
